@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Notification Toast</title>
+</head>
+<body>
+    <button>Show toast</button>
+    <div class="toast">
+        <span class="fas fa-exclamation-circle"></span>
+        <span class="msg">Warning: This an alert warning</span>
+        <span class="close-btn">
+            <span class="fas fa-times"></span>
+        </span>
+    </div>
+
+    <script>
+        const button = document.querySelector("button")
+        const toast = document.querySelector(".toast")
+        const closeBtn = document.querySelector(".close-btn")
+
+        button.addEventListener('click', () => {
+            toast.classList.add("show")
+            toast.classList.remove("hide")
+            toast.classList.add('showToast')
+            setTimeout(function(){
+                toast.classList.remove("show");
+                toast.classList.add("hide");
+            }, 3000)
+        })
+
+        closeBtn.addEventListener('click', () => {
+            toast.classList.remove("show")
+            toast.classList.add("hide")
+        })
+      </script>
+</body>
+</html>
